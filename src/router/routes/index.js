@@ -30,7 +30,6 @@ const HotelListPage = lazy(() => import('../../views/HotelListPage'))
 const PassengerInformation = lazy(() => import('../../views/PassengerInformation'))
 const ReservationResults  = lazy(() => import('../../views/ReservationResults'))
 const Payment   = lazy(() => import('../../views/Payment'))
-const SecondPage = lazy(() => import('../../views/SecondPage'))
 const Login = lazy(() => import('../../views/Login'))
 const Register = lazy(() => import('../../views/Register'))
 const ForgotPassword = lazy(() => import('../../views/ForgotPassword'))
@@ -64,8 +63,8 @@ const Routes = [
     element: <Payment />
   },
   {
-    path: '/second-page',
-    element: <SecondPage />
+    path: '/register',
+    element: <Register />
   },
   {
     path: '/login',
