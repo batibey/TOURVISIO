@@ -5,11 +5,10 @@ import Select from 'react-select'
 export default function VisaSearch({ search}) {
 
     const colourOptions = [
-        { value: 'ocean', label: 'Ocean' },
-        { value: 'blue', label: 'Blue' },
-        { value: 'purple', label: 'Purple' },
-        { value: 'red', label: 'Red' },
-        { value: 'orange', label: 'Orange' }
+        { value: 'turkey', label: 'Turkey' },
+        { value: 'england', label: 'England' },
+        { value: 'germany', label: 'Germany' },
+        { value: 'russia', label: 'Russia' }
       ]
   return (
     <>
