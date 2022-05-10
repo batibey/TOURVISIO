@@ -8,9 +8,9 @@ export default [
     navLink: '/home'
   },
   {
-    id: 'secondPage',
-    title: 'Second Page',
-    icon: <Mail size={20} />,
-    navLink: '/second-page'
+    id: 'register',
+    title: 'Register',
+    icon: <Home size={20} />,
+    navLink: '/register'
   }
 ]

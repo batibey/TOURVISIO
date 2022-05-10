@@ -75,7 +75,7 @@ const Register = () => {
               </g>
             </g>
           </svg>
-          <h2 className='brand-text text-primary ms-1'>Vuexy</h2>
+          <h2 className='brand-text text-primary ms-1'>TourVisio</h2>
         </Link>
         <Col className='d-none d-lg-flex align-items-center p-5' lg='8' sm='12'>
           <div className='w-100 d-lg-flex align-items-center justify-content-center px-5'>
@@ -85,28 +85,96 @@ const Register = () => {
         <Col className='d-flex align-items-center auth-bg px-2 p-lg-5' lg='4' sm='12'>
           <Col className='px-xl-2 mx-auto' xs='12' sm='8' md='6' lg='12'>
             <CardTitle tag='h2' className='fw-bold mb-1'>
-              Adventure starts here 🚀
+              Register Form
             </CardTitle>
-            <CardText className='mb-2'>Make your app management easy and fun!</CardText>
+            <CardText className='mb-2'><p><strong>Company Details</strong></p></CardText>
             <Form className='auth-register-form mt-2' onSubmit={e => e.preventDefault()}>
               <div className='mb-1'>
-                <Label className='form-label' for='register-username'>
-                  Username
+                <Label className='form-label' for='company-name'>
+                  Company Name
                 </Label>
-                <Input type='text' id='register-username' placeholder='johndoe' autoFocus />
+                <Input type='text' id='company-name' autoFocus />
               </div>
               <div className='mb-1'>
-                <Label className='form-label' for='register-email'>
-                  Email
+                <Label className='form-label' for='company-adress'>
+                  Company Adress
                 </Label>
-                <Input type='email' id='register-email' placeholder='john@example.com' />
+                <Input type='text' id='company-adress' autoFocus />
               </div>
-              <div className='mb-1'>
-                <Label className='form-label' for='register-password'>
-                  Password
-                </Label>
-                <InputPasswordToggle className='input-group-merge' id='register-password' />
+              <div className='row'>
+                <div className='mb-1 col-md-4 col-sm-4 col-xs-12' >
+                  <Label className='form-label' for='post-code'>
+                    Post Code
+                  </Label>
+                  <Input type='text' id='post-code' autoFocus />
+                </div>
+                <div className='mb-1 col-md-4 col-sm-4 col-xs-12' >
+                  <Label className='form-label' for='city'>
+                    City
+                  </Label>
+                  <Input type='text' id='city' autoFocus />
+                </div>
+                <div className='mb-1 col-md-4 col-sm-4 col-xs-12' >
+                  <Label className='form-label' for='country'>
+                    Country
+                  </Label>
+                  <Input type='text' id='country' autoFocus />
+                </div>
+                <p><strong>Contact Information</strong></p>
+
               </div>
+              <div className='row'>
+                <div className='col-md-2 col-sm-2 col-xs-12 title' >
+                  <Label className='form-label' for='title'>
+                    Title
+                  </Label>
+                  <Input type='text' id='title' autoFocus />
+                </div>
+                <div className='col-md-5 col-sm-5 col-xs-12 last-name' >
+                  <Label className='form-label' for='lastName'>
+                    Last Name
+                  </Label>
+                  <Input type='text' id='lastName' autoFocus />
+                </div>
+                <div className='col-md-5 col-sm-5 col-xs-12 first-name' >
+                  <Label className='form-label' for='firstName'>
+                    First Name
+                  </Label>
+                  <Input type='text' id='firstName' autoFocus />
+                </div>
+                <div className='col-md-4 col-sm-4 col-xs-12 email' >
+                  <Label className='form-label' for='email'>
+                    Email
+                  </Label>
+                  <Input type='text' id='email' autoFocus />
+                </div>
+                <div className='col-md-2 col-sm-2 col-xs-12 country-code' >
+                  <Label className='form-label' for='countryCode'>
+                    C.C.
+                  </Label>
+                  <Input type='text' id='countryCode' autoFocus />
+                </div>
+                <div className='col-md-2 col-sm-2 col-xs-12 area-code' >
+                  <Label className='form-label' for='areaCode'>
+                    Area C.
+                  </Label>
+                  <Input type='text' id='areaCode' autoFocus />
+                </div>
+                <div className='col-md-4 col-sm-4 col-xs-12 phone-number' >
+                  <Label className='form-label' for='phoneNumber'>
+                    Phone Number
+                  </Label>
+                  <Input type='text' id='phoneNumber' autoFocus />
+                </div>
+                <div className='col-md-12 col-sm-12 col-xs-12 position' >
+                  <Label className='form-label' for='position'>
+                    Position
+                  </Label>
+                  <Input type='text' id='position' autoFocus />
+                </div>
+                
+              </div>
+              <br />
               <div className='form-check mb-1'>
                 <Input type='checkbox' id='terms' />
                 <Label className='form-check-label' for='terms'>
@@ -126,23 +194,6 @@ const Register = () => {
                 <span>Sign in instead</span>
               </Link>
             </p>
-            <div className='divider my-2'>
-              <div className='divider-text'>or</div>
-            </div>
-            <div className='auth-footer-btn d-flex justify-content-center'>
-              <Button color='facebook'>
-                <Facebook size={14} />
-              </Button>
-              <Button color='twitter'>
-                <Twitter size={14} />
-              </Button>
-              <Button color='google'>
-                <Mail size={14} />
-              </Button>
-              <Button className='me-0' color='github'>
-                <GitHub size={14} />
-              </Button>
-            </div>
           </Col>
         </Col>
       </Row>
