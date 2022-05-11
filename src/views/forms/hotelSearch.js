@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Form, Label, Input, Button } from 'reactstrap'
 import {Link, useNavigate} from "react-router-dom"
 import mdlGetArrivalAutoCompleteRequest from '../../services/mdlGetArrivalAutoCompleteRequest'
+import AutoComplete from '@components/autocomplete'
+
 
 function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const [response, setResponse] = useState(null)
@@ -9,8 +11,10 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const [checkOut, setCheckOut] = useState(null)
   const [currency, setCurrency] = useState(null)
   const [nationality, setNationality] = useState(null)
-  const [location, setLocation] = useState(null)
+  const [location, setLocation] = useState("")
   const [adult, setAdult] = useState(null)
+  const [suggestions, setSuggestions] = useState([])
+ 
 
   const navigate = useNavigate()
   const headers = {
@@ -19,6 +23,8 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   
   useEffect(() => {
     mdlGetArrivalAutoCompleteRequest(location, headers, setResponse, setError, response)
+    setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.country.name} ` })))
+    console.log(suggestions)
   }, [location])
 
   const handleSearch = () => {
@@ -45,7 +51,14 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
 
   return (
     <>
-      <Input value={location} onChange={(e) => setLocation(e.target.value)} className='mt-2' type="text" bsSize="md" placeholder='location' />
+    <AutoComplete
+      filterKey='title'
+      suggestionLimit={4}
+      suggestions={suggestions}
+      className='form-control mt-2'
+      value={location} onChange={(e) => setLocation(e.target.value)} placeholder='location : antalya' 
+    />
+     
       <Row className='mt-2'>
         <Col>
           <Label> Check-in</Label>

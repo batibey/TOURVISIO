@@ -5,17 +5,17 @@ const mdlGetArrivalAutoCompleteRequest = (location, headers, setResponse, setErr
         culture: "en-US",
         currency: "EUR",
         productType: 2,
-        query: location
+        query: location || "antalya"
      }, {
       header: headers
     }) // search is the object with the search parameters
       .then(res => {
-        setResponse(res.data)
+        setResponse(res.data && res.data.body.items)
         console.log(response)
       }
       )
       .catch(err => {
-        setError(err.response.data)
+       console.log(err)
       }
       )
 } 
