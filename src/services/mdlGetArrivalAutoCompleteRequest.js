@@ -8,7 +8,7 @@ const mdlGetArrivalAutoCompleteRequest = (location, headers, setResponse, setErr
         query: location || "antalya"
      }, {
       header: headers
-    }) // search is the object with the search parameters
+    })
       .then(res => {
         setResponse(res.data && res.data.body.items)
         console.log(response)
