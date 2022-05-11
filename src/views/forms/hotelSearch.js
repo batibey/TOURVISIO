@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Form, Label, Input, Button } from 'reactstrap'
 import {Link, useNavigate} from "react-router-dom"
+import mdlGetArrivalAutoCompleteRequest from '../../services/mdlGetArrivalAutoCompleteRequest'
 
 function HotelsSearch({ search, setSearchApi, setError, customer}) {
+  const [response, setResponse] = useState(null)
   const [checkin, setCheckin] = useState(null)
   const [checkOut, setCheckOut] = useState(null)
   const [currency, setCurrency] = useState(null)
@@ -11,8 +13,16 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const [adult, setAdult] = useState(null)
 
   const navigate = useNavigate()
+  const headers = {
+    "Content-Type": 'application/json',
+    Authorization: `Bearer ${localStorage.getItem('token')}`}
+  
+  useEffect(() => {
+    mdlGetArrivalAutoCompleteRequest(location, headers, setResponse, setError, response)
+  }, [location])
 
   const handleSearch = () => {
+    
     if (checkin && checkOut && currency && nationality && location && adult && customer) {
       setSearchApi({customer,
         search,

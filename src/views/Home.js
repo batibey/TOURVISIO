@@ -1,5 +1,5 @@
 
-import axios from 'axios'
+// import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Form, Label, Input, Button } from 'reactstrap'
 import {MdError} from 'react-icons/md'
@@ -41,9 +41,9 @@ const Home = () => {
     }
    
   }, [error])
-  axios.get(`${process.env.REACT_APP_API_URL}/version`).then((res) => {
-    console.log(res)
-  })
+  // axios.get(`${process.env.REACT_APP_API_URL}/version`).then((res) => {
+  //   console.log(res)
+  // })
   return (
     <Row>
     <Col xs="12" sm="12" md="12" lg="6" xl="6">
