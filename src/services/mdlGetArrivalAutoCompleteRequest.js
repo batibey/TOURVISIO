@@ -17,6 +17,6 @@ const mdlGetArrivalAutoCompleteRequest = (location, headers, setResponse, setErr
       .catch(err => {
         setError(err.response.data)
       }
-      )
+      ) //hi
 } 
 export default mdlGetArrivalAutoCompleteRequest
