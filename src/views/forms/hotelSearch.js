@@ -19,7 +19,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const navigate = useNavigate()
   const headers = {
     "Content-Type": 'application/json',
-    Authorization: `Bearer ${localStorage.getItem('token')}`}
+    Authorization: `Bearer ${localStorage.getItem('token').slice(1, localStorage.getItem('token').length)}`}
   
   useEffect(() => {
     mdlGetArrivalAutoCompleteRequest(location, headers, setResponse, setError, response)
