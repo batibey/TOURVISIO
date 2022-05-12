@@ -1,8 +1,7 @@
 import axios from "axios"
-const url = "https://preprod-services.tourvisio.com/v2";
 
 const mdlPriceSearchRequest = (setResponse, setError, response, headers) => {
-    axios.post(url + '/api/productservice/pricesearch', {
+    axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/pricesearch', {
         checkAllotment: true,
         checkStopSale: true,
         getOnlyDiscountedPrice: false,
