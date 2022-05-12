@@ -51,7 +51,8 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
       suggestionLimit={4}
       suggestions={suggestions}
       className='form-control mt-2'
-      value={location} onChange={(e) => setLocation(e.target.value)} placeholder='location : antalya' 
+      value={location} onChange={(e) => setLocation(e.target.value)} placeholder='location : antalya'
+      autoFocus 
     />
      
       <Row className='mt-2'>
