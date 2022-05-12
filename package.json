@@ -84,6 +84,7 @@
     "sweetalert2": "11.1.9",
     "sweetalert2-react-content": "4.2.0",
     "swiper": "7.2.0",
+    "uuid": "^8.3.2",
     "wnumb": "1.2.0",
     "xlsx": "0.17.3",
     "yarn": "1.21.1",

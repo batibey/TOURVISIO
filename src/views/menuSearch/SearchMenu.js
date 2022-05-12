@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./searchMenu.css"
 import { MdOutlineFlight, MdHotel, MdOutlineSecurity, MdPhotoSizeSelectActual } from 'react-icons/md'
 import { RiShoppingBag2Fill } from 'react-icons/ri'
 import { AiFillCar } from 'react-icons/ai'

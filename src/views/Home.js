@@ -1,8 +1,4 @@
-
-// import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Form, Label, Input, Button } from 'reactstrap'
-import {MdError} from 'react-icons/md'
+import { Card, CardHeader, CardBody, Row, Col, Input } from 'reactstrap'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
@@ -15,7 +11,7 @@ import ReservationSearch from './forms/reservationSearch'
 import OnlineCheckIn from './forms/onlineCheckIn'
 import HolidayPackageSearch from './forms/holidayPackageSearch'
 import FlightSearch from './forms/flightSearch'
-import SliderHome from "./sliders/sliderHome"
+// import SliderHome from "./sliders/sliderHome"
 import ExcursionSearch from './forms/excursionSearch'
 import { useSearch } from "../utility/context/SearchContext"
 import VisaSearch from './forms/visaSearch'
@@ -26,7 +22,7 @@ const Home = () => {
   const [search, setSearch] = useState('hotel')
   const { setSearchApi } = useSearch()
   const [error, setError] = useState(false)
-  const [customer, setCustomer] = useState(null)
+  const [customer, setCustomer] = useState("")
   useEffect(() => {
     if (error) {
       return MySwal.fire({
@@ -69,7 +65,7 @@ const Home = () => {
     <Col xs="12" sm="12" md="12" lg="6" xl="6">
      <ReservationSearch/>
      <OnlineCheckIn/>
-     <SliderHome/>
+     {/* <SliderHome/> */}
     </Col>
   </Row>
   )

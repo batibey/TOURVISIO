@@ -7,12 +7,12 @@ import AutoComplete from '@components/autocomplete'
 
 function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const [response, setResponse] = useState(null)
-  const [checkin, setCheckin] = useState(null)
-  const [checkOut, setCheckOut] = useState(null)
-  const [currency, setCurrency] = useState(null)
-  const [nationality, setNationality] = useState(null)
+  const [checkin, setCheckin] = useState(``)
+  const [checkOut, setCheckOut] = useState(``)
+  const [currency, setCurrency] = useState('EUR')
+  const [nationality, setNationality] = useState('Germany')
   const [location, setLocation] = useState("")
-  const [adult, setAdult] = useState(null)
+  const [adult, setAdult] = useState(1)
   const [suggestions, setSuggestions] = useState([])
  
 
@@ -79,6 +79,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
           <option>Ethiopian</option>
           <option>French</option>
           <option>Italian</option>
+          <option>Germany</option>
         </Input></Col>
       </Row>
       <Row className='mt-2'>

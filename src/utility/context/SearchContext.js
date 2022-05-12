@@ -5,7 +5,7 @@ const SearchProvider = ({ children }) => {
   const [searchApi, setSearchApi] = useState(null)
  
 useEffect(() => { 
-    console.log(searchApi)
+    // console.log(searchApi)
     }, [searchApi])
   
   const values = {
