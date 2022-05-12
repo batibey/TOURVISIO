@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const mdlGetArrivalAutoCompleteRequest = (location, headers, setResponse, setError, response) => {
+const getArrivalAutocomplete = (location, headers, setResponse, setError, response) => {
     axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/getarrivalautocomplete', {
         culture: "en-US",
         currency: "EUR",
@@ -19,4 +19,4 @@ const mdlGetArrivalAutoCompleteRequest = (location, headers, setResponse, setErr
       }
       )
 } 
-export default mdlGetArrivalAutoCompleteRequest
+export default getArrivalAutocomplete
