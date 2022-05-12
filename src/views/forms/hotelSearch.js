@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Form, Label, Input, Button } from 'reactstrap'
 import {Link, useNavigate} from "react-router-dom"
-import getArrivalAutocomplete from '../../services/getArrivalAutocomplete'
+import mdlGetArrivalAutoCompleteRequest from '../../services/mdlGetArrivalAutoCompleteRequest'
 import AutoComplete from '@components/autocomplete'
 
 
@@ -22,7 +22,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
     Authorization: `Bearer ${localStorage.getItem('token').slice(1, localStorage.getItem('token').length)}`}
   
   useEffect(() => {
-    getArrivalAutocomplete(location, headers, setResponse, setError, response)//getArrivalAutocomplete 
+    mdlGetArrivalAutoCompleteRequest(location, headers, setResponse, setError, response)//getArrivalAutocomplete 
     setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.country.name} ` })))
     console.log(suggestions)
   }, [location])
