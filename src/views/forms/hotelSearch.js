@@ -17,14 +17,9 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
  
 
   const navigate = useNavigate()
-  const headers = {
-    "Content-Type": 'application/json',
-    Authorization: `Bearer ${localStorage.getItem('token').slice(1, localStorage.getItem('token').length)}`}
-  
   useEffect(() => {
-    mdlGetArrivalAutoCompleteRequest(location, headers, setResponse, setError, response)//getArrivalAutocomplete 
-    setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.country.name} ` })))
-    console.log(suggestions)
+    mdlGetArrivalAutoCompleteRequest(location, setResponse, setError, response)//getArrivalAutocomplete 
+    setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.hotel && x.hotel.name} ${x.city.name} , ${x.country.name} ` })))
   }, [location])
 
   const handleSearch = () => {
