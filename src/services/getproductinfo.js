@@ -1,8 +1,7 @@
 import axios from "axios"
 
-const url = 'https://preprod-services.tourvisio.com/v2';
 const mdlGetProductInfoRequest = (headers, setResponse, setError, response) => {
-    axios.post(url + '/api/productservice/getarrivalautocomplete', {
+    axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/getarrivalautocomplete', {
         productType: 2,
         ownerProvider: 2,
         product: "102576",

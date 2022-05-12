@@ -16,4 +16,5 @@ const mdlGetArrivalAutoCompleteRequest = (location, setResponse) => {
       }
       )
 } 
+
 export default mdlGetArrivalAutoCompleteRequest
