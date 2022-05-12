@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const mdlPriceSearchRequest = (setResponse, setError, response, headers) => {
+const mdlPriceSearchRequest = (setPriceSearchResponse, setError, priceSearchResponse) => {
     axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/pricesearch', {
         checkAllotment: true,
         checkStopSale: true,
@@ -33,16 +33,14 @@ const mdlPriceSearchRequest = (setResponse, setError, response, headers) => {
         night: 7,
         currency: "EUR",
         culture: "en-US"
-    }, {
-        header: headers
     })
         .then(res => {
-            setResponse(res.data)
-            console.log(response)
+            setPriceSearchResponse(res.data)
+            console.log(priceSearchResponse)
         }
         )
         .catch(err => {
-            setError(err.response.data)
+            setError(err.priceSearchResponse.data)
         }
         )
 }

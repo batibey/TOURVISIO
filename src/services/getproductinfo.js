@@ -1,21 +1,19 @@
 import axios from "axios"
 
-const mdlGetProductInfoRequest = (headers, setResponse, setError, response) => {
+const mdlGetProductInfoRequest = (setGetProductInfoResponse, setError, getProductInfoResponse) => {
     axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/getarrivalautocomplete', {
         productType: 2,
         ownerProvider: 2,
         product: "102576",
         culture: "en-US"
-      } , {
-      header: headers
-    }) 
+      }) 
       .then(res => {
-        setResponse(res.data)
-        console.log(response)
+        setGetProductInfoResponse(res.data)
+        console.log(getProductInfoResponse)
       }
       )
       .catch(err => {
-        setError(err.response.data)
+        setError(err.getProductInfoResponse.data)
       }
       )
 } 
