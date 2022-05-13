@@ -1,4 +1,20 @@
 import axios from "axios"
+//Nationality
+const Germany = Symbol("DE")
+const England = Symbol("EN")
+const Turkey = Symbol("TR")
+const UnitedKingdom = Symbol("GB")
+const Switzerland = Symbol("CH")
+const Spain = Symbol("ES")
+const Netherlands = Symbol("NL")
+const Mexico = Symbol("MX")
+const Italy = Symbol("IT")
+const CzechRepublic = Symbol("CZ")
+const Brazil = Symbol("BR")
+const Maldives = Symbol("MV")
+const Macedonia = Symbol("MK")
+const Madagascar = Symbol("MG")
+
 
 const mdlPriceSearchRequest = (searchApi) => {
     axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/pricesearch', {
