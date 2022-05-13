@@ -113,7 +113,7 @@ const HotelListPage = () => {
         </Col>
         <Col>
           <div className='content-area'>
-            <table class="table table-bordered default-table">
+            <table className="table table-bordered default-table">
               <thead>
                 <tr>
                   <th>Room Amenities</th>

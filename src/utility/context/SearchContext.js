@@ -2,7 +2,7 @@ import { useEffect, useContext, useState, createContext } from "react"
 
 const SearchContext = createContext()
 const SearchProvider = ({ children }) => {
-  const [searchApi, setSearchApi] = useState(null)
+  const [searchApi, setSearchApi] = useState([])
  
 useEffect(() => { 
     // console.log(searchApi)

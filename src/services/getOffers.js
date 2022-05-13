@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const mdlGetOffersRequest = (setGetOffersResponse, setError, getOffersResponse) => {
-    axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/getoffers', {
+    axios.post(`${process.env.REACT_APP_API_URL}/productservice/getoffers`, {
         searchId: "f43dcb3a-0214-4d17-8838-7540c815245d",
         offerId: "2$2$05ba9a42-24a8-41ce-bc61-40e6c443f9e5",
         productType: 2,

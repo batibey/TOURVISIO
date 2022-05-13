@@ -16,7 +16,7 @@ const ReservationResults = () => {
             <CardText> <b>Your booking has been sent to your operator</b></CardText>
             <CardText> <h2>Booking Number: <span className='text-success'>{uuidv4()}</span></h2></CardText>
             <CardText className='text-primary' style={{ textAlign: "left", marginTop: "40px" }}> HOTEL RESERVATION INFORMATIONS </CardText>
-            <table class="table table-bordered default-table mt-1">
+            <table className="table table-bordered default-table mt-1">
               <thead>
                 <tr>
                   <th></th>
@@ -57,7 +57,7 @@ const ReservationResults = () => {
         <Card style={{ textAlign: "center" }}>
           <CardBody>
             <CardText className='text-primary' style={{ textAlign: "left", marginTop: "20px" }}> PAYMENT INFORMATIONS </CardText>
-            <table class="table table-bordered default-table mt-1">
+            <table className="table table-bordered default-table mt-1">
               <thead>
                 <tr>
                   <th></th>

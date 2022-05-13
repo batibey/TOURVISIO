@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const mdlBeginTransactionRequest = (setBeginTransactionResponse, setError, getBeginTransactionResponse) => {
-    axios.post('https://preprod-services.tourvisio.com/v2/api/bookingservice/begintransaction', {
+    axios.post(`${process.env.REACT_APP_API_URL}/bookingservice/begintransaction`, {
         offerIds: [
           "2$2$TR~^005^~23494~^005^~70a3f435-bcaa-4890-baf3-ef10caaa22e5"
         ],

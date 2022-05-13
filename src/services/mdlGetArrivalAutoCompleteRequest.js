@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const mdlGetArrivalAutoCompleteRequest = (location, setResponse) => {
-    axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/getarrivalautocomplete', {
+    axios.post(`${process.env.REACT_APP_API_URL}/productservice/getarrivalautocomplete`, {
         culture: "en-US",
         currency: "EUR",
         productType: 2,

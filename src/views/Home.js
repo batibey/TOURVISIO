@@ -11,7 +11,7 @@ import ReservationSearch from './forms/reservationSearch'
 import OnlineCheckIn from './forms/onlineCheckIn'
 import HolidayPackageSearch from './forms/holidayPackageSearch'
 import FlightSearch from './forms/flightSearch'
-// import SliderHome from "./sliders/sliderHome"
+import SliderHome from "./sliders/sliderHome"
 import ExcursionSearch from './forms/excursionSearch'
 import { useSearch } from "../utility/context/SearchContext"
 import VisaSearch from './forms/visaSearch'
@@ -65,7 +65,7 @@ const Home = () => {
     <Col xs="12" sm="12" md="12" lg="6" xl="6">
      <ReservationSearch/>
      <OnlineCheckIn/>
-     {/* <SliderHome/> */}
+     <SliderHome/>
     </Col>
   </Row>
   )

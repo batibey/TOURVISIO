@@ -22,23 +22,24 @@ function HotelsSearch({ search, setSearchApi, setError, customer, searchApi}) {
 
   const navigate = useNavigate()
   useEffect(() => {
+    setSearchApi({customer,
+      search,
+      checkin,
+      checkOut,
+      currency,
+      nationality,
+      location,
+      adult
+    })
     mdlGetArrivalAutoCompleteRequest(location, setResponse, setError, response)//getArrivalAutocomplete 
     setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.hotel ? x.hotel.name : x.state && x.state.name} , ${x.country.name} ` })))
   }, [location])
 
-  const handleSearch = () => {
-    if (!(checkOut < checkin) && checkOut && currency && nationality && location && adult && customer) {
-      setSearchApi({customer,
-        search,
-        checkin,
-        checkOut,
-        currency,
-        nationality,
-        location,
-        adult
-      })
-      mdlPriceSearchRequest(searchApi)
-      navigate("/hotel-list")
+  const handleSearch = async() => {
+    if (!(checkOut < checkin) && currency && nationality && location && adult) {
+        mdlPriceSearchRequest(searchApi)
+        navigate("/hotel-list")
+     
     } else {
       setError(true)
       setTimeout(() => {

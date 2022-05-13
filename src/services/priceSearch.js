@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const mdlPriceSearchRequest = (searchApi) => {
-    axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/pricesearch', {
+    axios.post(`${process.env.REACT_APP_API_URL}/productservice/pricesearch`, {
         checkAllotment: true,
         checkStopSale: true,
         getOnlyDiscountedPrice: false,
@@ -33,6 +33,7 @@ const mdlPriceSearchRequest = (searchApi) => {
         culture: "en-US"
     })
         .then(res => {
+            console.log(searchApi)
             console.log(res.data)
         }
         )

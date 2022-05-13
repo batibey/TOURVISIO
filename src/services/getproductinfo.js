@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const mdlGetProductInfoRequest = (setGetProductInfoResponse, setError, getProductInfoResponse) => {
-    axios.post('https://preprod-services.tourvisio.com/v2/api/productservice/getproductinfo', {
+    axios.post(`${process.env.REACT_APP_API_URL}/productservice/getproductinfo`, {
         productType: 2,
         ownerProvider: 2,
         product: "102576",
