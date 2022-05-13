@@ -5,7 +5,7 @@ const mdlGetArrivalAutoCompleteRequest = (location, setResponse) => {
         culture: "en-US",
         currency: "EUR",
         productType: 2,
-        query: location || "antalya"
+        query: location.length > 3 ? location : "antalya"
      })
       .then(res => {
         setResponse(res.data && res.data.body.items)

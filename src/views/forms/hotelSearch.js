@@ -15,11 +15,11 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const [adult, setAdult] = useState(1)
   const [suggestions, setSuggestions] = useState([])
  
+
   const navigate = useNavigate()
   useEffect(() => {
-    mdlGetArrivalAutoCompleteRequest(location, setResponse, setError, response)
-
-    setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.hotel ? x.hotel.name : ""} ${x.city.name} , ${x.country.name} ` })))
+    mdlGetArrivalAutoCompleteRequest(location, setResponse, setError, response)//getArrivalAutocomplete 
+    setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.hotel ? x.hotel.name : x.state && x.state.name} , ${x.country.name} ` })))
   }, [location])
 
   const handleSearch = () => {
