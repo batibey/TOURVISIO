@@ -15,10 +15,10 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   const [adult, setAdult] = useState(1)
   const [suggestions, setSuggestions] = useState([])
  
-
   const navigate = useNavigate()
   useEffect(() => {
-    mdlGetArrivalAutoCompleteRequest(location, setResponse, setError, response)//getArrivalAutocomplete 
+    mdlGetArrivalAutoCompleteRequest(location, setResponse, setError, response)
+
     setSuggestions(response === null ?  [] : response.map((x) => ({ title :  `${x.city.name} , ${x.hotel ? x.hotel.name : ""} ${x.city.name} , ${x.country.name} ` })))
   }, [location])
 

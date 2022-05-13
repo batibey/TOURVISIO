@@ -26,7 +26,7 @@ const PassengerInformation = () => {
                 </Col>
                 <Col xs="3" sm="3" md="3" lg="3" xl="3" >
                   <div>
-                    <Input placeholder='Name'
+                    <Input autoFocus placeholder='Name'
                     />
                   </div></Col>
                 <Col xs="3" sm="3" md="3" lg="3" xl="3" >
