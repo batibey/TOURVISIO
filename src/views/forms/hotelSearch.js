@@ -4,6 +4,8 @@ import {Link, useNavigate} from "react-router-dom"
 import mdlGetArrivalAutoCompleteRequest from '../../services/mdlGetArrivalAutoCompleteRequest'
 import AutoComplete from '@components/autocomplete'
 import mdlPriceSearchRequest from '../../services/priceSearch'
+import { useHotels } from "../../utility/context/HotelsContext"
+
 
 const month = new Date().getMonth() + 1 < 10 ? `0${new Date().getMonth() + 1}` : new Date().getMonth() + 1
 const day = new Date().getDate() < 10 ? `0${new Date().getDate()}` : new Date().getDate()
@@ -18,7 +20,8 @@ function HotelsSearch({ search, setSearchApi, setError, customer, searchApi}) {
   const [location, setLocation] = useState("")
   const [adult, setAdult] = useState(1)
   const [suggestions, setSuggestions] = useState([])
- 
+
+  const { hotels, setHotels } = useHotels() 
 
   const navigate = useNavigate()
   useEffect(() => {
@@ -37,7 +40,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer, searchApi}) {
 
   const handleSearch = async() => {
     if (!(checkOut < checkin) && currency && nationality && location && adult) {
-        mdlPriceSearchRequest(searchApi)
+        mdlPriceSearchRequest(searchApi, hotels, setHotels)
         navigate("/hotel-list")
      
     } else {

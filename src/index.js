@@ -43,6 +43,7 @@ import './assets/scss/style.scss'
 // ** Service Worker
 import * as serviceWorker from './serviceWorker'
 import { SearchProvider } from "./utility/context/SearchContext"
+import { HotelsProvider } from "./utility/context/HotelsContext"
 
 
 // ** Lazy load app
@@ -50,6 +51,7 @@ const LazyApp = lazy(() => import('./App'))
 ReactDOM.render(
   <BrowserRouter>
   <SearchProvider>
+  <HotelsProvider>
     <Provider store={store}>
       <Suspense fallback={<Spinner />}>
         <ThemeContext>
@@ -58,7 +60,8 @@ ReactDOM.render(
         </ThemeContext>
       </Suspense>
     </Provider>
-    </SearchProvider>
+    </HotelsProvider>
+  </SearchProvider>
   </BrowserRouter>,
   document.getElementById('root')
 )

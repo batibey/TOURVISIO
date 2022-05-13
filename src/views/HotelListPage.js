@@ -2,9 +2,14 @@ import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Fo
 import { useSearch } from "../utility/context/SearchContext"
 import { FaSearchLocation } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useHotels } from "../utility/context/HotelsContext"
+
 
 const HotelListPage = () => {
+  const { hotels } = useHotels() 
   const { searchApi } = useSearch()
+
+  console.log(hotels)
   return (
     <>
       <Row>
@@ -39,10 +44,10 @@ const HotelListPage = () => {
                   </Col>
                   <Col>
                     <CardText>
-                      <b>MARDAN PALACE</b>
+                      <b>{hotels[0].name && hotels[0].name }</b>
                     </CardText>
                     <CardText>
-                      Antalya
+                    {hotels[0].location.name && hotels[0].location.name }
                     </CardText>
                     <CardTitle tag="h5">
                     </CardTitle>
@@ -67,11 +72,10 @@ const HotelListPage = () => {
                   </Col>
                   <Col>
                     <CardText>
-                      <b>MOONLIGHT HOTEL</b>
+                      <b>{hotels[1].name && hotels[1].name }</b>
                     </CardText>
                     <CardText>
-                      Side TV Local
-                    </CardText>
+                    {hotels[1].location.name && hotels[1].location.name }                    </CardText>
                     <CardTitle tag="h5">
                     </CardTitle>
                     <CardText>
@@ -80,34 +84,7 @@ const HotelListPage = () => {
                 </Row>
 
               </Card>
-              <Card
-                body
-                color="secondary"
-                outline
-              >
-                <Row>
-                  <Col>
-                    <CardImg
-                      alt="Harrington Park Resort"
-                      src="https://media-cdn.tripadvisor.com/media/photo-s/09/82/ff/0f/harrington-park-resort.jpg"
-                      height="100"
-                    />
-                  </Col>
-                  <Col>
-                    <CardText>
-                      <b>HARRINGTON PARK RESORT</b>
-                    </CardText>
-                    <CardText>
-                      Antalya US
-                    </CardText>
-                    <CardTitle tag="h5">
-                    </CardTitle>
-                    <CardText>
-                    </CardText>
-                  </Col>
-                </Row>
-
-              </Card>
+            
             </CardBody>
           </Card>
         </Col>

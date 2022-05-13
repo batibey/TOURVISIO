@@ -1,4 +1,5 @@
 import axios from "axios"
+
 //Nationality
 const Germany = Symbol("DE")
 const England = Symbol("EN")
@@ -16,7 +17,7 @@ const Macedonia = Symbol("MK")
 const Madagascar = Symbol("MG")
 
 
-const mdlPriceSearchRequest = (searchApi) => {
+const mdlPriceSearchRequest = (searchApi, hotels, setHotels) => {
     axios.post(`${process.env.REACT_APP_API_URL}/productservice/pricesearch`, {
         checkAllotment: true,
         checkStopSale: true,
@@ -26,7 +27,9 @@ const mdlPriceSearchRequest = (searchApi) => {
         arrivalLocations: [
             {
                 id: "23494",
-                type: 2
+                type: 2,
+                provider: 2,
+                name: searchApi.location
             }
         ],
         roomCriteria: [
@@ -49,8 +52,7 @@ const mdlPriceSearchRequest = (searchApi) => {
         culture: "en-US"
     })
         .then(res => {
-            console.log(searchApi)
-            console.log(res.data)
+            setHotels(res.data.body.hotels)
         }
         )
         .catch(err => {
