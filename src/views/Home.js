@@ -20,7 +20,7 @@ import TourCultureSearch from './forms/tourCultureSearch'
 
 const Home = () => {
   const [search, setSearch] = useState('hotel')
-  const { setSearchApi } = useSearch()
+  const { setSearchApi, searchApi } = useSearch()
   const [error, setError] = useState(false)
   const [customer, setCustomer] = useState("")
   useEffect(() => {
@@ -53,7 +53,7 @@ const Home = () => {
             <option>Mustafa Batı</option>
             <option>Ömer Süt</option>
           </Input>
-          {search === 'hotel' && <HotelsSearch customer={customer} setError={setError}  search={search} setSearchApi={setSearchApi} />}
+          {search === 'hotel' && <HotelsSearch customer={customer} setError={setError}  search={search} setSearchApi={setSearchApi} searchApi={searchApi} />}
           {search === 'holiday package' && <HolidayPackageSearch search={search} setSearchApi={setSearchApi} />}
           {search === 'flight' && <FlightSearch search={search} setSearchApi={setSearchApi} />}
           {search === 'visa' && <VisaSearch search={search} setSearchApi={setSearchApi} />}

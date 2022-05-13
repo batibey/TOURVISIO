@@ -3,12 +3,16 @@ import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Fo
 import {Link, useNavigate} from "react-router-dom"
 import mdlGetArrivalAutoCompleteRequest from '../../services/mdlGetArrivalAutoCompleteRequest'
 import AutoComplete from '@components/autocomplete'
+import mdlPriceSearchRequest from '../../services/priceSearch'
 
+const month = new Date().getMonth() + 1 < 10 ? `0${new Date().getMonth() + 1}` : new Date().getMonth() + 1
+const day = new Date().getDate() < 10 ? `0${new Date().getDate()}` : new Date().getDate()
+const today = `${new Date().getFullYear()}-${month}-${day}`
 
-function HotelsSearch({ search, setSearchApi, setError, customer}) {
+function HotelsSearch({ search, setSearchApi, setError, customer, searchApi}) {
   const [response, setResponse] = useState(null)
-  const [checkin, setCheckin] = useState(``)
-  const [checkOut, setCheckOut] = useState(``)
+  const [checkin, setCheckin] = useState(today)
+  const [checkOut, setCheckOut] = useState(today)
   const [currency, setCurrency] = useState('EUR')
   const [nationality, setNationality] = useState('Germany')
   const [location, setLocation] = useState("")
@@ -23,8 +27,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
   }, [location])
 
   const handleSearch = () => {
-    
-    if (checkin && checkOut && currency && nationality && location && adult && customer) {
+    if (!(checkOut < checkin) && checkOut && currency && nationality && location && adult && customer) {
       setSearchApi({customer,
         search,
         checkin,
@@ -34,6 +37,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer}) {
         location,
         adult
       })
+      mdlPriceSearchRequest(searchApi)
       navigate("/hotel-list")
     } else {
       setError(true)
