@@ -44,10 +44,10 @@ const HotelListPage = () => {
                   </Col>
                   <Col>
                     <CardText>
-                      <b>{hotels[0].name && hotels[0].name }</b>
+                      <b>{hotels[0] && hotels[0].name }</b>
                     </CardText>
                     <CardText>
-                    {hotels[0].location.name && hotels[0].location.name }
+                    {hotels[0] && hotels[0].location.name }
                     </CardText>
                     <CardTitle tag="h5">
                     </CardTitle>
@@ -72,10 +72,10 @@ const HotelListPage = () => {
                   </Col>
                   <Col>
                     <CardText>
-                      <b>{hotels[1].name && hotels[1].name }</b>
+                      <b>{hotels[1] && hotels[1].name }</b>
                     </CardText>
                     <CardText>
-                    {hotels[1].location.name && hotels[1].location.name }                    </CardText>
+                    {hotels[1] && hotels[1].location.name }                    </CardText>
                     <CardTitle tag="h5">
                     </CardTitle>
                     <CardText>
