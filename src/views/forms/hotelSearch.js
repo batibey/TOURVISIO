@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardHeader, CardBody, CardTitle, CardText, CardLink, Row, Col, Form, Label, Input, Button } from 'reactstrap'
 import {Link, useNavigate} from "react-router-dom"
-import mdlGetArrivalAutoCompleteRequest from '../../services/mdlGetArrivalAutoCompleteRequest'
+import mdlGetArrivalAutoCompleteRequest from '../../services/ProductService/getarrivalautocompleterequest'
 import AutoComplete from '@components/autocomplete'
-import mdlPriceSearchRequest from '../../services/priceSearch'
+import mdlPriceSearchRequest from '../../services/ProductService/priceSearch'
 import { useHotels } from "../../utility/context/HotelsContext"
 
 
@@ -39,7 +39,7 @@ function HotelsSearch({ search, setSearchApi, setError, customer, searchApi}) {
   }, [location])
 
   const handleSearch = async() => {
-    if (!(checkOut < checkin) && currency && nationality && location && adult) {
+    if (!(checkOut < checkin) && !(checkin < today) && currency && nationality && location && adult) {
         mdlPriceSearchRequest(searchApi, hotels, setHotels)
         navigate("/hotel-list")
      
