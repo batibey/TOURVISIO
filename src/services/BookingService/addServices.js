@@ -10,15 +10,15 @@ const mdlAddServicesRequest = (setAddServicesResponse, setError, getAddServicesR
         ],
         currency: "EUR",
         culture: "en-US"
-    }) 
-      .then(res => {
-        setAddServicesResponse(res.data)
-        console.log(getAddServicesRequestResponse)
-      }
-      )
-      .catch(err => {
-        setError(err.getAddServicesRequestResponse.data)
-      }
-      )
-} 
+    })
+        .then(res => {
+            setAddServicesResponse(res.data)
+            console.log(getAddServicesRequestResponse)
+        }
+        )
+        .catch(err => {
+            setError(err.getAddServicesRequestResponse.data)
+        }
+        )
+}
 export default mdlAddServicesRequest
